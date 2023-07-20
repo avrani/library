@@ -1,0 +1,23 @@
+.container {
+    overflow-x: auto;
+    max-height: calc(100vh - 150px);
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+        padding-top: 10px;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+        .fa{
+            cursor: pointer;
+        }
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+}

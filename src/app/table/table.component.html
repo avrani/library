@@ -1,0 +1,18 @@
+<div class="container">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Authors</th>
+            <th>Category</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let item of list">
+            <td><a routerLink="/description/{{item.isbn}}">{{item.title}}</a></td>
+            <td>{{item.author}}</td>
+            <td>{{item.category}}</td>
+            <td><i class="fa fa-trash-o" (click)="delete(item.isbn)" ></i></td>
+            <td><a class="fa fa-pencil"  routerLink="/edit/{{item.isbn}}" ></a></td>
+        </tr>
+    </table>
+</div>

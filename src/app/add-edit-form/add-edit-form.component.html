@@ -1,0 +1,66 @@
+<div class="container">
+    <form [formGroup]="form">
+        <div>
+            <label for="title">Title </label>
+            <input class="rounded" type="text" id="title" name="title" formControlName="title">
+            <ng-container *ngIf="!title?.valid && (title?.dirty ||title?.touched)">
+                <div [hidden]="!title.errors.required">
+                    This field is required
+                </div>
+                <div [hidden]="!title.errors.minlength">
+                    Min Length is 2
+                </div>
+            </ng-container>
+        </div>
+        <div>
+            <label for="author">Author </label>
+            <input type="text" id="author" name="author" formControlName="author">
+            <ng-container *ngIf="!author?.valid && (author?.dirty ||author?.touched)">
+                <div [hidden]="!author.errors.required">
+                    This field is required
+                </div>
+                <div [hidden]="!author.errors.minlength">
+                    Min Length is 2
+                </div>
+            </ng-container>
+        </div>
+        <div>
+            <label for="category">Category </label>
+            <input type="text" id="category" name="category" formControlName="category">
+            <ng-container *ngIf="!category?.valid && (category?.dirty ||category?.touched)">
+                <div [hidden]="!category.errors.required">
+                    This field is required
+                </div>
+                <div [hidden]="!category.errors.minlength">
+                    Min Length is 2
+                </div>
+            </ng-container>
+        </div>
+
+        <div>
+            <label for="shortDescription">Short Description </label>
+            <input type="text" id="shortDescription" name="shortDescription" formControlName="shortDescription">
+            <ng-container *ngIf="!shortDescription?.valid && (shortDescription?.dirty ||shortDescription?.touched)">
+                <div [hidden]="!shortDescription.errors.required">
+                    This field is required
+                </div>
+                <div [hidden]="!shortDescription.errors.minlength">
+                    Min Length is 2
+                </div>
+            </ng-container>
+        </div>
+        <div>
+            <label for="longDescription">Long Description </label><br>
+            <textarea id="longDescription" name="longDescription" formControlName="longDescription"></textarea>
+            <ng-container *ngIf="!longDescription?.valid && (longDescription?.dirty ||longDescription?.touched)">
+                <div [hidden]="!longDescription.errors.required">
+                    This field is required
+                </div>
+                <div [hidden]="!longDescription.errors.minlength">
+                    Min Length is 2
+                </div>
+            </ng-container>
+        </div>
+        <button [disabled]="form.invalid" [class.disabled]="true" (click)="update()">save</button>
+    </form>
+</div>
